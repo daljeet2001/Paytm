@@ -11,6 +11,7 @@ const cookieParser=require('cookie-parser')
 const app=express()
 let port=8080
 const userRoutes=require('./routes/user.routes');
+const accountRoutes=require('./routes/account')
 const cors=require('cors')
 
 connectToDb();
@@ -22,6 +23,7 @@ app.use(cookieParser());
 
 
 app.use('/api/v1/user',userRoutes);
+app.use('/api/v1/account',accountRoutes);
 app.get('/',(req,res)=>{
 res.send('Hello world');
 });
